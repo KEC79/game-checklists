@@ -1,14 +1,14 @@
-import React from "react"
+import React from "react";
 
 export const TodoForm = ({ addTodo }) => {
-    const [value, setValue] = React.useState("")
+    const [value, setValue] = React.useState("");
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        if (!value) return
-        addTodo(value)
-        setValue("")
-    }
+        e.preventDefault();
+        if (!value) return;
+        addTodo(value);
+        setValue("");
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -20,5 +20,5 @@ export const TodoForm = ({ addTodo }) => {
                 onChange={(e) => setValue(e.target.value)}
             />
         </form>
-    )
-}
+    );
+};

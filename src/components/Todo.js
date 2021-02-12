@@ -1,5 +1,5 @@
-import { CgRemove } from "react-icons/cg"
-import Button from "react-bootstrap/Button"
+import { CgRemove } from "react-icons/cg";
+import Button from "react-bootstrap/Button";
 
 export const Todo = ({ todo, index, completeTodo, removeTodo }) => {
     return (
@@ -17,5 +17,5 @@ export const Todo = ({ todo, index, completeTodo, removeTodo }) => {
                 </Button>{" "}
             </div>
         </div>
-    )
-}
+    );
+};
