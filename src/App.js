@@ -6,14 +6,17 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useGameStore } from "./persistence/gameStore";
 
 export const App = () => {
-    const savedGames = JSON.parse(localStorage.getItem("games"));
+    const gameStore = useGameStore();
+    const savedGames = gameStore.getGames();
+
     const [games, setGames] = React.useState(savedGames || []);
 
     React.useEffect(() => {
-        localStorage.setItem("games", JSON.stringify(games));
-    });
+        gameStore.setGames(games);
+    }, [games]);
 
     const addGame = (text) => {
         const newGames = [...games, { text }];
