@@ -8,9 +8,12 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const App = () => {
-    const [games, setGames] = React.useState([
-        { text: "Game 1", isCompleted: false },
-    ]);
+    const savedGames = JSON.parse(localStorage.getItem("games"));
+    const [games, setGames] = React.useState(savedGames || []);
+
+    React.useEffect(() => {
+        localStorage.setItem("games", JSON.stringify(games));
+    });
 
     const addGame = (text) => {
         const newGames = [...games, { text }];
