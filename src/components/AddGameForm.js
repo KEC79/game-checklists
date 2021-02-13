@@ -17,11 +17,12 @@ export const AddGameForm = ({ addGame }) => {
         <Form onSubmit={handleSubmit}>
             <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                    <InputGroup.Text id="game name">Add game:</InputGroup.Text>
+                    <InputGroup.Text id="game-name">Add game:</InputGroup.Text>
                 </InputGroup.Prepend>
                 <FormControl
-                    placeholder="Game name"
-                    aria-label="Game name"
+                    type="text"
+                    placeholder="Enter game name here..."
+                    aria-label="Game-name"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                 />

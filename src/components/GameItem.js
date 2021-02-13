@@ -5,6 +5,7 @@ export const GameItem = ({ game, index, completeGame, removeGame }) => {
     return (
         <div
             className="game-item"
+            data-testid="game-list-item"
             style={{ textDecoration: game.isCompleted ? "line-through" : "" }}
         >
             {game.text}
@@ -17,6 +18,7 @@ export const GameItem = ({ game, index, completeGame, removeGame }) => {
                     Complete
                 </Button>
                 <Button
+                    data-testid="remove-button"
                     className="button"
                     variant="info"
                     onClick={() => removeGame(index)}
