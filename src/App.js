@@ -35,6 +35,7 @@ export const App = () => {
             <div className="todo-list">
                 {todos.map((todo, index) => (
                     <Todo
+                        key={index}
                         index={index}
                         todo={todo}
                         completeTodo={completeTodo}

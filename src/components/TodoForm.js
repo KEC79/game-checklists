@@ -1,4 +1,7 @@
 import React from "react";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import Form from "react-bootstrap/Form";
 
 export const TodoForm = ({ addTodo }) => {
     const [value, setValue] = React.useState("");
@@ -11,14 +14,18 @@ export const TodoForm = ({ addTodo }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                className="input"
-                className="todo-input"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-            />
-        </form>
+        <Form onSubmit={handleSubmit}>
+            <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                    <InputGroup.Text id="game name">Add game:</InputGroup.Text>
+                </InputGroup.Prepend>
+                <FormControl
+                    placeholder="Game name"
+                    aria-label="Game name"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                />
+            </InputGroup>
+        </Form>
     );
 };

@@ -23,14 +23,6 @@
     padding: 3px 10px;
 }
 
-.todo-input {
-    align-items: center;
-    background: #fff;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-    display: flex;
-    font-size: 16px;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    padding: 3px 10px;
+.todo-button {
+    margin-left: 5px;
 }

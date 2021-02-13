@@ -9,12 +9,20 @@ export const Todo = ({ todo, index, completeTodo, removeTodo }) => {
         >
             {todo.text}
             <div>
-                <Button variant="info" onClick={() => completeTodo(index)}>
+                <Button
+                    className="todo-button"
+                    variant="info"
+                    onClick={() => completeTodo(index)}
+                >
                     Complete
-                </Button>{" "}
-                <Button variant="info" onClick={() => removeTodo(index)}>
+                </Button>
+                <Button
+                    className="todo-button"
+                    variant="info"
+                    onClick={() => removeTodo(index)}
+                >
                     <CgRemove />
-                </Button>{" "}
+                </Button>
             </div>
         </div>
     );
