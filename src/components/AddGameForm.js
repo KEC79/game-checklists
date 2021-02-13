@@ -3,13 +3,13 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 
-export const TodoForm = ({ addTodo }) => {
+export const AddGameForm = ({ addGame }) => {
     const [value, setValue] = React.useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!value) return;
-        addTodo(value);
+        addGame(value);
         setValue("");
     };
 

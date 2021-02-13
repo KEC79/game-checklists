@@ -1,34 +1,32 @@
 import React from "react";
 import "./App.css";
-import { TodoForm } from "./components/TodoForm";
-import { Todo } from "./components/Todo";
+import { AddGameForm } from "./components/AddGameForm";
+import { GameItem } from "./components/GameItem";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "react-bootstrap/Card";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const App = () => {
-    const [todos, setTodos] = React.useState([
+    const [games, setGames] = React.useState([
         { text: "Game 1", isCompleted: false },
-        { text: "Game 2", isCompleted: false },
-        { text: "Game 3", isCompleted: false },
     ]);
 
-    const addTodo = (text) => {
-        const newTodos = [...todos, { text }];
-        setTodos(newTodos);
+    const addGame = (text) => {
+        const newGames = [...games, { text }];
+        setGames(newGames);
     };
 
-    const completeTodo = (index) => {
-        const newTodos = [...todos];
-        newTodos[index].isCompleted = true;
-        setTodos(newTodos);
+    const completeGame = (index) => {
+        const newGames = [...games];
+        newGames[index].isCompleted = true;
+        setGames(newGames);
     };
 
-    const removeTodo = (index) => {
-        const newTodos = [...todos];
-        newTodos.splice(index, 1);
-        setTodos(newTodos);
+    const removeGame = (index) => {
+        const newGames = [...games];
+        newGames.splice(index, 1);
+        setGames(newGames);
     };
 
     return (
@@ -40,23 +38,23 @@ export const App = () => {
                     play and cross them off when completed.
                 </p>
             </Jumbotron>
-            <div className="todo-list">
+            <div className="games-list">
                 <Card style={{ width: "390px" }}>
                     <Card.Body>
                         <Card.Title>Your list of games</Card.Title>
                         <Card.Text>
                             Add all the games you want to play here.
                         </Card.Text>
-                        {todos.map((todo, index) => (
-                            <Todo
+                        {games.map((game, index) => (
+                            <GameItem
                                 key={index}
                                 index={index}
-                                todo={todo}
-                                completeTodo={completeTodo}
-                                removeTodo={removeTodo}
+                                game={game}
+                                completeGame={completeGame}
+                                removeGame={removeGame}
                             />
                         ))}
-                        <TodoForm addTodo={addTodo} />
+                        <AddGameForm addGame={addGame} />
                     </Card.Body>
                 </Card>
             </div>

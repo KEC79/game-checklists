@@ -4,14 +4,14 @@
     padding: 30px;
 }
 
-.todo-list {
+.game-list {
     background: #e8e8e8;
     border-radius: 4px;
     max-width: 400px;
     padding: 5px;
 }
 
-.todo {
+.game-item {
     align-items: center;
     background: #fff;
     border-radius: 3px;
@@ -23,6 +23,6 @@
     padding: 3px 10px;
 }
 
-.todo-button {
+.button {
     margin-left: 5px;
 }

@@ -1,25 +1,25 @@
 import { CgRemove } from "react-icons/cg";
 import Button from "react-bootstrap/Button";
 
-export const Todo = ({ todo, index, completeTodo, removeTodo }) => {
+export const GameItem = ({ game, index, completeGame, removeGame }) => {
     return (
         <div
-            className="todo"
-            style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+            className="game-item"
+            style={{ textDecoration: game.isCompleted ? "line-through" : "" }}
         >
-            {todo.text}
+            {game.text}
             <div>
                 <Button
-                    className="todo-button"
+                    className="button"
                     variant="info"
-                    onClick={() => completeTodo(index)}
+                    onClick={() => completeGame(index)}
                 >
                     Complete
                 </Button>
                 <Button
-                    className="todo-button"
+                    className="button"
                     variant="info"
-                    onClick={() => removeTodo(index)}
+                    onClick={() => removeGame(index)}
                 >
                     <CgRemove />
                 </Button>
